@@ -1,0 +1,20 @@
+def triangles():
+    L = [1]
+    S = []
+    while True:
+        yield L 
+        L = [1] + S + [1]
+        S = []
+        for i in range(len(L)-1):
+            S.append(L[i] + L[i+1])
+p = triangles()
+ret = []
+# print(next(p))
+# print("-----------")
+# print(next(p))
+# print("-----------")
+# print(next(p))
+# print("-----------")
+for i in range(5):
+    ret.append(next(p))
+print(ret)
